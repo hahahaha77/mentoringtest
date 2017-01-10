@@ -1,0 +1,2 @@
+INSERT INTO USER (USER_ID, PASSWORD, NAME, EMAIL) VALUES('shjegal', 'Test0000', '제갈세형', 'shjegal@rockplace.co.kr');
+INSERT INTO USER (USER_ID, PASSWORD, NAME, EMAIL) VALUES('aaaa', 'Test0000', '세형', 'jegal@rockplace.co.kr');
