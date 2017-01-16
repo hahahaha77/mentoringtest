@@ -33,6 +33,10 @@ public class User {
 	public String getName() {
 		return name;
 	}
+	
+	public String getUserId() {
+		return userId;
+	}
 		
 	public void setUserId(String userId) {
 		this.userId = userId;
@@ -58,4 +62,17 @@ public class User {
 		this.name = updatedUser.name;
 		this.email = updatedUser.email;
 	}
+
+	public User() {}
+	
+	public User(long id, String userId, String password, String name, String email) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.password = password;
+		this.name = name;
+		this.email = email;
+	}
+	
+	
 }

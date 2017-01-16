@@ -11,24 +11,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import rock.domain.User;
-import rock.domain.UserRepository;
+import rock.service.UserService;
 
 @Controller
 @RequestMapping("/users")
 public class UserController {
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 	
 	@PostMapping("")
 	public String create(User user) {
 		System.out.println("user : " + user);
-		userRepository.save(user);
+		userService.save(user);
 		return "redirect:/users";
 	}
 	
 	@PostMapping("/login")
 	public String login(String userId, String password ,HttpSession session) {
-		User user = userRepository.findByUserId(userId);
+		User user = userService.findByUserId(userId);
 		if(user == null) {
 			return "user/login";
 		}
@@ -48,7 +48,7 @@ public class UserController {
 	
 	@GetMapping("")
 	public String list(Model model) {
-		model.addAttribute("users", userRepository.findAll());
+		model.addAttribute("users", userService.findAll());
 		return "user/list";
 	}
 
@@ -69,7 +69,7 @@ public class UserController {
 			throw new IllegalStateException("You can`t update the anther user.");
 		}
 		
-		User user = userRepository.findOne(id);
+		User user = userService.findOne(id);
 		model.addAttribute("user", user);
 		return "user/updateForm";
 	}
@@ -86,9 +86,9 @@ public class UserController {
 			throw new IllegalStateException("You can`t update the anther user.");
 		}
 		
-		User user = userRepository.findOne(id);
+		User user = userService.findOne(id);
 		user.update(updatedUser);
-		userRepository.save(user);
+		userService.save(user);
 		
 		return "redirect:/users";
 	}
