@@ -13,12 +13,13 @@ import rock.domain.AnswerRepository;
 import rock.domain.Question;
 import rock.domain.QuestionRepository;
 import rock.domain.User;
+import rock.service.AnswerService;
 
 @Controller
 @RequestMapping("/question/{questionId}/answers")
 public class AnswerController {
 	@Autowired
-	private AnswerRepository answerRepository;
+	private AnswerService answerRepository;
 	
 	@Autowired
 	private QuestionRepository questionRepository;

@@ -6,7 +6,7 @@
 	<groupId>rockplace</groupId>
 	<artifactId>almond</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>spring-shjegal</name>
 	<description>Demo project for Spring Boot</description>
