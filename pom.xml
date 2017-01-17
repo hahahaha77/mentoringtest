@@ -67,6 +67,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>almond_demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
